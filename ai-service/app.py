@@ -12,7 +12,13 @@ UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Load YOLO model
-model = YOLO("yolo11n.pt")
+# Load trained AutoFocus damage detection model
+MODEL_PATH = "runs/detect/runs/autofocus_damage_model-2/weights/best.pt"
+
+if not os.path.exists(MODEL_PATH):
+    raise FileNotFoundError(f"Model not found: {MODEL_PATH}")
+
+model = YOLO(MODEL_PATH)
 
 
 @app.route("/")

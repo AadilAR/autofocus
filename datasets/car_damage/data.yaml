@@ -1,0 +1,13 @@
+path: C:/Users/aa321/Pictures/autofocus_project/autofocus/datasets/car_damage
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: dent
+  1: scratch
+  2: crack
+  3: glass shatter
+  4: lamp broken
+  5: tire flat

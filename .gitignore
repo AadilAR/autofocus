@@ -4,3 +4,17 @@ venv/
 __pycache__/
 *.pt
 dist/
+# Original dataset
+datasets/CarDD/
+
+# Training outputs
+runs/
+
+# Python virtual environment
+venv/
+
+# Uploaded images
+uploads/
+
+# Model weights
+*.pt

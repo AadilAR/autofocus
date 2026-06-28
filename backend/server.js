@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
+const protect = require("./middleware/authMiddleware");
 
 const app = express();
 
@@ -21,6 +22,15 @@ app.get("/", (req, res) => {
     res.json({
         message: "🚗 AutoFocus Backend Running Successfully"
     });
+});
+
+app.get("/api/profile", protect, (req, res) => {
+
+    res.json({
+        message: "Protected Route",
+        user: req.user
+    });
+
 });
 
 // Start Server
